@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace CoreSchool.Models;
+﻿namespace CoreSchool.Models;
 
 internal class Evaluation
 {
@@ -17,9 +15,6 @@ internal class Evaluation
 		{
 			if (Convert.ToDecimal(value) is not (> 0 and < 10))
 				throw new ArgumentException("Score must be between 0 and 10 (Decimal allowed).");
-
-			if (value as decimal)
-				Console.Write("A");
 
 			_score = value;
 		}
