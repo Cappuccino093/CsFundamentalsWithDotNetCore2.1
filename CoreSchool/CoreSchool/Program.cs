@@ -1,42 +1,34 @@
 ﻿using CoreSchool.Models;
 
-namespace CoreSchool;
-
-internal class Program
+School school = new()
 {
-	internal static void Main()
+	Name = "Platzi",
+	CreationYear = 2002,
+	SchoolType = SchoolType.Elementary,
+	Courses = new Course[]
 	{
-		School school = new()
+		new()
 		{
-			Name = "Platzi",
-			CreationYear = 2002,
-			SchoolType = SchoolType.Elementary,
-			Courses = new Course[]
-			{
-				new()
-				{
-					Name = "101",
-					Shift = Shift.Morning
-				},
-				new()
-				{
-					Name = "102",
-					Shift = Shift.Evening
-				},
-				new()
-				{
-					Name = "103",
-					Shift = Shift.Night
-				}
-			}
-		};
-
-		Console.WriteLine("School:");
-		Console.WriteLine(school);
-		Console.WriteLine("\nCourses:");
-		foreach (Course course in school.Courses)
+			Name = "101",
+			Shift = Shift.Morning
+		},
+		new()
 		{
-			Console.WriteLine(course);
+			Name = "102",
+			Shift = Shift.Evening
+		},
+		new()
+		{
+			Name = "103",
+			Shift = Shift.Night
 		}
 	}
+};
+
+Console.WriteLine("School:");
+Console.WriteLine(school);
+Console.WriteLine("\nCourses:");
+foreach (Course course in school.Courses)
+{
+	Console.WriteLine(course);
 }
