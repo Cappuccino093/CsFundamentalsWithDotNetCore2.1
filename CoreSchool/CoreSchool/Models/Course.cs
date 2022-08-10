@@ -2,13 +2,11 @@
 
 namespace CoreSchool.Models;
 
-internal class Course
+public class Course
 {
-	public Guid Id { get; }
+	public Guid Id { get; } = Guid.NewGuid();
 	public required string Name { get; set; }
 	public required Shift Shift { get; set; }
-
-	public Course() => Id = Guid.NewGuid();
-
-	public override string ToString() => JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
+	public Subject[] Subjects { get; set; } = Array.Empty<Subject>();
+	public Student[] Students { get; set; } = Array.Empty<Student>(); 
 }
